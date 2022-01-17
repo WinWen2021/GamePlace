@@ -27,11 +27,9 @@ local GameEndTransitionEvent = R:Wait(ReplicatedStorageEvents, "match.GameEndTra
 local GameShowResult = R:Wait(ReplicatedStorageEvents, "match.GameShowResult")
 
 -- Values
-local GameValue = R:Wait(ReplicatedStorage, "GameValue")
+local GameValue = R:Wait(ReplicatedStorage, "Sole.GameValue")
 local GameStatus = R:Wait(GameValue, "GameStatus")
-local IntermissionDuration = R:Wait(GameValue, "IntermissionDuration")
-local EndDuration = R:Wait(GameValue, "EndDuration")
-local timeLeft = R:Wait(ReplicatedStorage, "DisplayValues.TimeLeft")
+local timeLeft = R:Wait(ReplicatedStorage, "Sole.DisplayValues.TimeLeft")
 
 local function load(player)
 	
@@ -70,8 +68,7 @@ while true do
 		--displayManager:DisplayMessageNotice("在此期间您可以在游戏内提前熟悉游戏场景")
 		GameStatus.Value = gameSettings.GameStatus.Intermission
 		for i = 1, gameSettings.intermissionDuration do
-			IntermissionDuration.Value = gameSettings.intermissionDuration - i
-			timeLeft.Value = IntermissionDuration.Value
+			timeLeft.Value = gameSettings.intermissionDuration - i
 			wait(1)
 		end
 	until Players.NumPlayers >= gameSettings.minimumPlayers
@@ -100,10 +97,6 @@ while true do
 	GameShowResult:FireAllClients(gameSettings.endResultDuration)
 	matchManager.showMatchResult()
 	wait(gameSettings.endResultDuration)
-	--for i = 1, gameSettings.endResultDuration do
-	--	EndDuration.Value = gameSettings.endResultDuration - i
-	--	wait(1)
-	--end
 	
 	--重置比赛
 	matchManager.resetMatch()

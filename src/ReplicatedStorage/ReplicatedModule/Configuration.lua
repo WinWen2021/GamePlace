@@ -1,15 +1,12 @@
 --客户端配置文件
 local Configuration = {}
 
-Configuration.GameName = "枪林弹雨 - 黑风竞技场"
 Configuration.TeleportStr = "传送中"
 Configuration.TeleportDuration = 30
 Configuration.AutoTeleportToBasePlace = 15
 
 Configuration.GamePlaceList = {
 	BASE_PLACE = "BASE_PLACE",		--基地
-	FIRST_GAME = "FIRST_GAME",		--黑风竞技场
-	SECOND_GAME = "SECOND_GAME",	--未来之城
 }
 
 Configuration.NoticeType = {

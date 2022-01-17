@@ -19,7 +19,7 @@ local RewardItemUi = R:Wait(ResultGui, "RewardItem")
 local AdditionUi = R:Wait(ResultGui, "addition")
 local RewardUi = R:Wait(ResultGui, "reward")
 
-local Sound = R:Wait("ReplicatedStorage.Sound")
+local Sound = R:Wait("ReplicatedStorage.Sole.Sound")
 
 CloseBtn.MouseButton1Click:Connect(function()
 	closeResult()

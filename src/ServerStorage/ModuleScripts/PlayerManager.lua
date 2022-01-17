@@ -26,9 +26,9 @@ local matchEnd = Router:Wait(events, "MatchEnd")
 local lobbySpawn = Router:Wait("Workspace.SpawnLocations.Lobby.StartSpawn")
 
 -- Values
-local displayValues = Router:Wait(ReplicatedStorage, "DisplayValues")
+local displayValues = Router:Wait(ReplicatedStorage, "Sole.DisplayValues")
 local playersLeft = Router:Wait(displayValues, "PlayersLeft")
-local GameStatus = Router:Wait(ReplicatedStorage, "GameValue.GameStatus")
+local GameStatus = Router:Wait(ReplicatedStorage, "Sole.GameValue.GameStatus")
 
 local UpdateTakeBag = Router:Wait(script.Parent, "TakeBagManager.UpdateTakeBag")
 local UnequipToolEvent = Router:Wait(script.Parent, "TakeBagManager.UnequipTool")

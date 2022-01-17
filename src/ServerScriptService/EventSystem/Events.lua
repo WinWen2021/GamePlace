@@ -1,25 +1,39 @@
 local Events = {}
 
 Events.RemoteEvent = {
-	"Test1", 
-	"Test2",
-	"Test5",
-	"Test8",
-	Test9={
-		"Test11","Test12"
+	"DisplayEndResult",
+	"DisplayNotification",
+	"DisplayScore",
+	"DisplayTimerInfo",
+	"TeleportEvent",
+	"TurnToBasePlaceEvent",
+	Bag = {
+		"ChangeTools",
+		"GetBags",
+		"GetTakeBags",
+		"Remove",
+		"Take",
+		"ToolUpdated",
+	},
+	Match = {
+		"GameEnd",
+		"GameEndTransition",
+		"GameShowResult",
+		"GameStartTransition",
+		"GameTimeUpNotice",
+	},
+	Shop = {
+		"BuyGoods",
+		"GetShopGoods",
 	},
 }
 
 Events.ServerEvent = {
-	"Test3", 
-	"Test4",
-	"Test5",
+	"Test3",
 }
 
 Events.ClientEvent = {
-	"Test6", 
-	"Test7",
-	"Test8",
+	"Test6",
 }
 
 return Events

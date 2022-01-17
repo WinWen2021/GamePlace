@@ -25,7 +25,7 @@ local GameEndTransitionEvent = R:Wait(Events, "match.GameEndTransition")
 local GameTimeUpNotice = R:Wait(Events, "match.GameTimeUpNotice")
 local GameEnd = R:Wait(Events, "match.GameEnd")
 
-local Sound = R:Wait("ReplicatedStorage.Sound")
+local Sound = R:Wait("ReplicatedStorage.Sole.Sound")
 
 local TimeUpToast = nil
 

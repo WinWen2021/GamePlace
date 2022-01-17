@@ -22,10 +22,16 @@ function initializeEventSystem()
 		local RemoteEventFolder = ReplicatedStorage:FindFirstChild("RemoteEventSystem") or Instance.new("Folder")
 		RemoteEventFolder.Name = "RemoteEventSystem"
 		RemoteEventFolder.Parent = ReplicatedStorage
-		local BindableEventFolder = ServerScriptService:FindFirstChild("BindableEventSystem") or Instance.new("Folder")
-		BindableEventFolder.Name = "BindableEventSystem"
-		BindableEventFolder.Parent = ServerScriptService
-		
+		local BindableEventFolder = nil
+		if (IsServer) then
+			BindableEventFolder = ServerScriptService:FindFirstChild("BindableEventSystem") or Instance.new("Folder")
+			BindableEventFolder.Name = "BindableEventSystem"
+			BindableEventFolder.Parent = ServerScriptService
+		else
+			BindableEventFolder = ReplicatedStorage:FindFirstChild("BindableEventSystem") or Instance.new("Folder")
+			BindableEventFolder.Name = "BindableEventSystem"
+			BindableEventFolder.Parent = ReplicatedStorage
+		end
 		
 		if Events.RemoteEvent then
 			initRemoteEvent(RemoteEventFolder, Events.RemoteEvent)

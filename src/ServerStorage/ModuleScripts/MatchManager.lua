@@ -23,7 +23,7 @@ local GameEnd = R:Wait(ReplicatedStorage, "Events.match.GameEnd")
 local GameTimeUpNotice = R:Wait(ReplicatedStorage, "Events.match.GameTimeUpNotice")
 
 -- Values
-local displayValues = R:Wait(ReplicatedStorage, "DisplayValues")
+local displayValues = R:Wait(ReplicatedStorage, "Sole.DisplayValues")
 local timeLeft = R:Wait(displayValues, "TimeLeft")
 
 -- Creates a new timer object to be used to keep track of match time. 

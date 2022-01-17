@@ -2,12 +2,10 @@ local DisplayManager = {}
 
 -- Services
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local R = require(game:GetService("ReplicatedStorage"):WaitForChild("Router"))
+
 local Configuration = require(ReplicatedStorage:WaitForChild("ReplicatedModule"):WaitForChild("Configuration"))
-
-
--- Display Values used to update Player GUI
-local displayValues = ReplicatedStorage:WaitForChild("DisplayValues")
-local playersLeft = displayValues:WaitForChild("PlayersLeft")
+local Event = R:Require("ReplicatedStorage.EventManager")
 
 --Event
 local Events = game.ReplicatedStorage.Events

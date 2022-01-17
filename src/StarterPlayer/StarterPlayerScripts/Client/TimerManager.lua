@@ -6,7 +6,7 @@ local ScreenGui = R:Wait(R:GetLocalPlayerGui(), "ScreenGui")
 -- Services
 local ReplicatedStorage = R:Wait("ReplicatedStorage")
 -- Display Values used to update Player GUI
-local displayValues = R:Wait(ReplicatedStorage, "DisplayValues")
+local displayValues = R:Wait(ReplicatedStorage, "Sole.DisplayValues")
 local TimeLeft = R:Wait(displayValues, "TimeLeft")
 
 local Timer = R:Wait(ScreenGui, "ScoreFrame.Timer")
