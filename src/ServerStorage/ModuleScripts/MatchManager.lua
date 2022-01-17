@@ -10,7 +10,7 @@ local ReplicatedStorage = R:Wait("ReplicatedStorage")
 local moduleScripts = R:Wait(ServerStorage, "ModuleScripts")
 local playerManager = R:Require(moduleScripts, "PlayerManager")
 local teamManager = R:Require(moduleScripts, "TeamManager")
-local gameSettings = R:Require(moduleScripts, "GameSettings")
+local gameSettings = R:Require("ServerStorage.Sole.GameSettings")
 local displayManager = R:Require(moduleScripts, "DisplayManager")
 local timer = R:Require(moduleScripts, "Timer")
 

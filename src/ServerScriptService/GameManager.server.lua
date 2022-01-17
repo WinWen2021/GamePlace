@@ -9,7 +9,7 @@ local Players = R:Wait("Players")
 -- Module Scripts
 local moduleScripts = R:Wait(ServerStorage, "ModuleScripts")
 local matchManager = R:Require(moduleScripts, "MatchManager")
-local gameSettings = R:Require(moduleScripts, "GameSettings")
+local gameSettings = R:Require("ServerStorage.Sole.GameSettings")
 local PlayerManager = R:Require(moduleScripts, "PlayerManager")
 local TeamManager = R:Require(moduleScripts, "TeamManager")
 local displayManager = R:Require(moduleScripts, "DisplayManager")

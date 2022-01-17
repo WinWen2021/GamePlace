@@ -7,7 +7,7 @@ local Router = require(game:GetService("ReplicatedStorage"):WaitForChild("Router
 --modelscript
 local PlayerStorage = Router:Require("ServerStorage.PlayerStorage")
 local PlayerManager = Router:Require(script.Parent, "PlayerDataManager")
-local GameSettings = Router:Require(script.Parent, "GameSettings")
+local GameSettings = Router:Require("ServerStorage.Sole.GameSettings")
 local TakeBagManager = Router:Require(script.Parent, "TakeBagManager")
 local DisplayManager = Router:Require(script.Parent, "DisplayManager")
 

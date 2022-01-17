@@ -15,7 +15,7 @@ local WeaponsSystem = R:Require(WeaponsSystemFolder, "WeaponsSystem")
 
 -- Modules
 local moduleScripts = R:Wait(ServerStorage, "ModuleScripts")
-local gameSettings = R:Require(moduleScripts, "GameSettings")
+local gameSettings = R:Require("ServerStorage.Sole.GameSettings")
 local DisplayManager = R:Require(moduleScripts, "DisplayManager")
 local PlayerStorage = R:Require(ServerStorage, "PlayerStorage")
 local PlayerDataManager = R:Require(moduleScripts, "PlayerDataManager")

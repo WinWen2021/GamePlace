@@ -11,7 +11,7 @@ local WeaponsSystem = Router:Require(ReplicatedStorage, "WeaponsSystem.WeaponsSy
 
 -- Modules
 local moduleScripts = Router:Wait(ServerStorage, "ModuleScripts")
-local gameSettings = Router:Require(moduleScripts, "GameSettings")
+local gameSettings = Router:Require("ServerStorage.Sole.GameSettings")
 local teamManager = Router:Require(moduleScripts, "TeamManager")
 local DisplayManager = Router:Require(moduleScripts, "DisplayManager")
 

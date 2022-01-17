@@ -4,7 +4,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local TeleportFolder = ReplicatedStorage:WaitForChild("Teleport")
 local TurnToBasePlaceEvent = ReplicatedStorage:WaitForChild("Events"):WaitForChild("TurnToBasePlaceEvent")
 local Configuration = require(ReplicatedStorage:WaitForChild("ReplicatedModule"):WaitForChild("Configuration"))
-local gameSettings = require(game:GetService("ServerStorage"):WaitForChild("ModuleScripts"):WaitForChild("GameSettings"))
+local gameSettings = require(game:GetService("ServerStorage"):WaitForChild("Sole"):WaitForChild("GameSettings"))
 local TeleportEvent = game.ReplicatedStorage.Events:WaitForChild("TeleportEvent")
 
 -- Require teleport module
