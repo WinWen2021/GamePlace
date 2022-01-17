@@ -16,11 +16,13 @@ local BagEvents = Router:Wait(ReplicatedStorage, "Events.bag")
 local GetTakeBags = Router:Wait(BagEvents, "GetTakeBags")
 local ChangeTools = Router:Wait(BagEvents, "ChangeTools")
 local ToolUpdated = Router:Wait(BagEvents, "ToolUpdated")
-local UpdateTakeBag = Router:Wait(script, "UpdateTakeBag")
-local GetNewTool = Router:Wait(script, "GetNewTool")
-local UnequipToolEvent = Router:Wait(script, "UnequipTool")
-local RemoveTakeBag = Router:Wait(script, "RemoveTakeBag")
-local RefreshTakeBag = Router:Wait(script, "RefreshTakeBag")
+
+local Event = Router:Require("ReplicatedStorage.EventManager")
+local UpdateTakeBag = Event.ServerEvent.TakeBagEvents.UpdateTakeBag
+local GetNewTool = Event.ServerEvent.TakeBagEvents.GetNewTool
+local UnequipToolEvent = Event.ServerEvent.TakeBagEvents.UnequipTool
+local RemoveTakeBag = Event.ServerEvent.TakeBagEvents.RemoveTakeBag
+local RefreshTakeBag = Event.ServerEvent.TakeBagEvents.RefreshTakeBag
 
 local TakeBagData = {}
 

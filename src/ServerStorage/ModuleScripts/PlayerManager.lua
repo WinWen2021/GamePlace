@@ -30,10 +30,10 @@ local displayValues = Router:Wait(ReplicatedStorage, "Sole.DisplayValues")
 local playersLeft = Router:Wait(displayValues, "PlayersLeft")
 local GameStatus = Router:Wait(ReplicatedStorage, "Sole.GameValue.GameStatus")
 
-local UpdateTakeBag = Router:Wait(script.Parent, "TakeBagManager.UpdateTakeBag")
-local UnequipToolEvent = Router:Wait(script.Parent, "TakeBagManager.UnequipTool")
-local RefreshTakeBag = Router:Wait(script.Parent, "TakeBagManager.RefreshTakeBag")
-local RemoveTakeBag = Router:Wait(script.Parent, "TakeBagManager.RemoveTakeBag")
+local Event = Router:Require("ReplicatedStorage.EventManager")
+local UpdateTakeBag = Event.ServerEvent.TakeBagEvents.UpdateTakeBag
+local RemoveTakeBag = Event.ServerEvent.TakeBagEvents.RemoveTakeBag
+local RefreshTakeBag = Event.ServerEvent.TakeBagEvents.RefreshTakeBag
 
 local ActivePlayers = {}
 local isFirstBlood = true --第一滴血是否还存在
@@ -89,7 +89,6 @@ local function preparePlayer(player)
 	PlayerManager.setPlayerLeaderstats(player, 0, 0)
 	
 	RefreshTakeBag:Fire(player)
-	--UnequipToolEvent:Fire(player)
 	player:LoadCharacter()
 end
 

@@ -29,7 +29,13 @@ Events.RemoteEvent = {
 }
 
 Events.ServerEvent = {
-	"Test3",
+	TakeBagEvents = {
+		"GetNewTool",
+		"RefreshTakeBag",
+		"RemoveTakeBag",
+		"UnequipTool",
+		"UpdateTakeBag",
+	},
 }
 
 Events.ClientEvent = {

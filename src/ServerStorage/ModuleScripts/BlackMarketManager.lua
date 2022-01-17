@@ -15,8 +15,9 @@ local DisplayManager = Router:Require(script.Parent, "DisplayManager")
 local shopEvents = Router:Wait("ReplicatedStorage.Events.shop")
 local GetShopGoods = Router:Wait(shopEvents, "GetShopGoods")
 local BuyGoods = Router:Wait(shopEvents, "BuyGoods")
-local UpdateTakeBag = Router:Wait(script.Parent, "TakeBagManager.UpdateTakeBag")
-local GetNewTool = Router:Wait(script.Parent, "TakeBagManager.GetNewTool")
+
+local Event = Router:Require("ReplicatedStorage.EventManager")
+local GetNewTool = Event.ServerEvent.TakeBagEvents.GetNewTool
 
 local PlayerMenus = {}
 Router:Wait("Players").PlayerRemoving:Connect(function(player)
@@ -179,25 +180,12 @@ function onBuyGoodsFromBlackMarket(player, goods, acceptSecondPrice)
 		end
 		if not paymentForBlackMarket(player, mGoods) then return end	--支付
 		mGoods = PlayerStorage:GetStorageByIds({mGoods.Id})[1]
-		--table.insert(TakeBagData.Weapons, mGoods)
-		--UpdateTakeBag:Fire(player)
+		
 		GetNewTool:Fire(player, mGoods)
 		DisplayManager:DisplayMessageNoticeToPlayer(player, "获得 ["..mGoods.Name.."]")
 		
 	elseif mGoods.Type == PlayerStorage.Type.Grenade then
 		if not paymentForBlackMarket(player, mGoods) then return end	--支付
-		--local isAdded = false
-		--for _, grenade in pairs(TakeBagData.Grenades) do
-		--	if mGoods.Id == grenade.Id then
-		--		grenade.Number += mGoods.Number
-		--		isAdded = true
-		--	end
-		--end
-		--if not isAdded then
-		--	mGoods = PlayerStorage:GetStorageByIds({mGoods.Id})[1]
-		--	table.insert(TakeBagData.Grenades, mGoods)
-		--end
-		--UpdateTakeBag:Fire(player)
 		
 		GetNewTool:Fire(player, mGoods)
 		DisplayManager:DisplayMessageNoticeToPlayer(player, "获得 ["..mGoods.Name.."] x"..mGoods.Number)
@@ -328,6 +316,7 @@ BuyGoods.OnServerEvent:Connect(onBuyGoodsFromBlackMarket)
 local MarketplaceService = game:GetService("MarketplaceService")
 local DataStoreService = game:GetService("DataStoreService")
 local Players = game:GetService("Players")
+local ServerStorage = game:GetService("ServerStorage")
 
 -- 此数据存储用于跟踪已成功处理的购买流程
 local purchaseHistoryStore = DataStoreService:GetDataStore("PurchaseHistory")

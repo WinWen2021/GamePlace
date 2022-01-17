@@ -84,7 +84,8 @@ function initBindableEvent(folder, events, pond)
 			local newFolder = Instance.new("Folder")
 			newFolder.Name = key
 			newFolder.Parent = folder
-			initBindableEvent(folder, name, pond[key])
+			pond[key] = {}
+			initBindableEvent(newFolder, name, pond[key])
 		else
 			assert(type(name)=="string", (IsServer and "ServerEvent" or "ClientEvent")..
 				" accept string type only")

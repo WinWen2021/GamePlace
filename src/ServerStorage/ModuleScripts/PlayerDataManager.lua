@@ -16,10 +16,6 @@ local TableCopy = Router:Require(ReplicatedStorage, "ReplicatedModule.TableCopy"
 local DataStoreManager = Router:Require(script.Parent, "DataStoreManager")
 
 
---Event
-local Events = Router:Wait(ReplicatedStorage, "Events")
-local GetTakeBags = Router:Wait(Events, "bag.GetTakeBags")
-local UpdateTakeBag = Router:Wait("ServerStorage.ModuleScripts.TakeBagManager.UpdateTakeBag")
 
 --local
 local ActivePlayers = {}				--游戏内活跃玩家
@@ -46,7 +42,6 @@ function onPlayerAdd(player)
 	ActivePlayers[player.UserId] = player
 	ActivePlayerStoreDatas[player.UserId] = playerStoreData
 	
-	--UpdateTakeBag:Fire(player)
 end
 
 --玩家获得金币
