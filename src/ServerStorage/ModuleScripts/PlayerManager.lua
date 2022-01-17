@@ -19,8 +19,8 @@ local TeleportManager = Router:Require(moduleScripts, "TeleportManager")
 local Utils = Router:Require(ReplicatedStorage, "ReplicatedModule.Utils")
 
 -- Events
-local events = Router:Wait(ServerStorage, "Events")
-local matchEnd = Router:Wait(events, "MatchEnd")
+local Event = Router:Require("ReplicatedStorage.EventManager")
+local matchEnd = Event.ServerEvent.Match.MatchEnd
 
 -- Variables
 local lobbySpawn = Router:Wait("Workspace.SpawnLocations.Lobby.StartSpawn")
@@ -252,7 +252,7 @@ function PlayerManager.addPlayerDeathScore(player, deathScore)
 end
 
 --玩家受到手雷伤害回调
-local GrenadeDoDamage = Router:Wait("ServerStorage.Events.GrenadeDoDamage")
+local GrenadeDoDamage = Router:Wait("ServerStorage.GrenadeDoDamage")
 GrenadeDoDamage.Event:Connect(function(target, amount, damageType, dealer)
 	--onDamage(nil, target, amount, damageType, dealer, nil, nil)
 	if target:IsA("Humanoid") then

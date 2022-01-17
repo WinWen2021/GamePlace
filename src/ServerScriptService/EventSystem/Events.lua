@@ -29,6 +29,10 @@ Events.RemoteEvent = {
 }
 
 Events.ServerEvent = {
+	Match = {
+		"MatchEnd",
+		"MatchStart",
+	},
 	TakeBagEvents = {
 		"GetNewTool",
 		"RefreshTakeBag",

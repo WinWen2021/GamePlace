@@ -18,8 +18,8 @@ local TakeBagManager = R:Require(moduleScripts, "TakeBagManager")
 local BlackMarketManager = R:Require(moduleScripts, "BlackMarketManager")
 
 -- Events
-local events = R:Wait(ServerStorage, "Events")
-local matchEnd = R:Wait(events, "MatchEnd")
+local Event = R:Require("ReplicatedStorage.EventManager")
+local matchEnd = Event.ServerEvent.Match.MatchEnd
 
 local ReplicatedStorageEvents = R:Wait(ReplicatedStorage, "Events")
 local GameStartTransitionEvent = R:Wait(ReplicatedStorageEvents, "match.GameStartTransition")

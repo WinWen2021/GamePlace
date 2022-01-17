@@ -26,8 +26,8 @@ local TableCopy = R:Require(ReplicatedStorage, "ReplicatedModule.TableCopy")
 local spawnLocations = R:Wait(workspace, "SpawnLocations.Teams")
 
 -- Events
-local events = R:Wait(ServerStorage, "Events")
-local matchEnd = R:Wait(events, "MatchEnd")
+local Event = R:Require("ReplicatedStorage.EventManager")
+local matchEnd = Event.ServerEvent.Match.MatchEnd
 
 --Local Value
 local TeamPlayers = {}

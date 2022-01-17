@@ -15,9 +15,9 @@ local displayManager = R:Require(moduleScripts, "DisplayManager")
 local timer = R:Require(moduleScripts, "Timer")
 
 -- Events
-local events = R:Wait(ServerStorage, "Events")
-local matchStart = R:Wait(events, "MatchStart")
-local matchEnd = R:Wait(events, "MatchEnd")
+local Event = R:Require("ReplicatedStorage.EventManager")
+local matchEnd = Event.ServerEvent.Match.MatchEnd
+local matchStart = Event.ServerEvent.Match.MatchStart
 
 local GameEnd = R:Wait(ReplicatedStorage, "Events.match.GameEnd")
 local GameTimeUpNotice = R:Wait(ReplicatedStorage, "Events.match.GameTimeUpNotice")
